@@ -36,3 +36,10 @@ fi
 
 > **:warning: ATENÇÃO :warning:**  
 O script possuim valores de exemplo preechidos e finalizará com falha caso algum deles não seja ajustado... 
+
+## Baixando o Script
+Este repositório é público para facilitar o Download do script, não há nenhuma informação sensível aqui.
+
+```bash
+wget https://raw.githubusercontent.com/hospitalsaocamilo/hsc-linux-set-ip/refs/heads/main/file/set-ip.sh
+```
