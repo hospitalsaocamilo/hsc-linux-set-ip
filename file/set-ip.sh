@@ -13,10 +13,10 @@
 # Configuração das interfaces
 INTERFACE="dummy"
 # IPs das duas localidades
-IP1="10.10.10.10/24"  # IP na localidade A
+IP1="10.10.10.10/24"  # IP/MASK na localidade A
 GATEWAY1="10.10.10.1"
 
-IP2="20.20.20.20/24"  # IP na localidade B
+IP2="20.20.20.20/24"  # IP/MASK na localidade B
 GATEWAY2="20.20.20.1"
 
 # Validação de alterações para uso, finaliza com erro e se algum item não for ajustado.
