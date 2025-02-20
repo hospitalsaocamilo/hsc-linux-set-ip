@@ -6,10 +6,10 @@ O script contorna a limitação atual do `veeam` que ainda não consegue trocar 
 
 ## Validação
 Testado em servidores:
-- família Redhat
+- família Redhat (7/8/9)
 
 Pendetente de testes:
-- familia Debian
+- familia Debian (ubuntu 18.04/20.04/22.04)
 
 ## Usabilidade
 Deve-se baixar o script no servidor, ajustar os IPs (ORIGEM/DESTINO) conforme o planejamento da migração.
