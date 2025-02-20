@@ -50,6 +50,14 @@ fi
 sleep 10
 
 # Verifica conectividade com o gateway atual
+GATEWAY=$(ip r | grep ^default | awk '{ print $3 } ')
+ping -c 3 -W 2 $GATEWAY > /dev/null
+if [ $? -eq 0 ]; then
+    echo "Gateway $GATEWAY está acessível. Saindo sem alterar..."
+    exit 0
+fi
+
+# Verifica conectividade com os gateways em caso de falha da configuração atual
 ping -c 3 -W 2 $GATEWAY1 > /dev/null
 if [ $? -eq 0 ]; then
     echo "Gateway $GATEWAY1 está acessível. Mantendo IP $IP1."

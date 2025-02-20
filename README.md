@@ -67,7 +67,7 @@ fi
 ```
 ### Ativando 'SET IP'
 
-
+Baixando o script que executará a troca de IP na migração, é importante informar os dados da troca de IP, sem isso o script finalizará com falha.
 
 ```bash
 mkdir -p /usr/local/scripts
@@ -87,9 +87,6 @@ fi
 
 chmod 750 $SCRIPT_PATH
 ```
-
-
-
 
 > **:warning: ATENÇÃO :warning:**  
 Se o script de troca de IPs não for ajustado, ao ser executado, ele finalizará com falha e não afetará o sistema... 
