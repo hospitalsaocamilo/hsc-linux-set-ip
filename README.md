@@ -33,11 +33,11 @@ fi
 ```bash
 if [ ! -f /etc/systemd/system/rc-local.service ]; then
     if command -v wget &>/dev/null; then
-        wget -O /etc/systemd/system/rc-local.service https://raw.githubusercontent.com/hsc-linux-set-ip/refs/heads/main/file/rc-local.service
+        wget -O /etc/systemd/system/rc-local.service https://raw.githubusercontent.com/hospitalsaocamilo/hsc-linux-set-ip/refs/heads/main/file/rc-local.service
         systemctl daemon-reload
         systemctl enable rc-local
     elif command -v curl &>/dev/null; then
-        curl -o /etc/systemd/system/rc-local.service https://raw.githubusercontent.com/hsc-linux-set-ip/refs/heads/main/file/rc-local.service
+        curl -o /etc/systemd/system/rc-local.service https://raw.githubusercontent.com/hospitalsaocamilo/hsc-linux-set-ip/refs/heads/main/file/rc-local.service
         systemctl daemon-reload
         systemctl enable rc-local        
     else
