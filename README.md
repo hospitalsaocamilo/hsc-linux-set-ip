@@ -89,11 +89,11 @@ chmod 750 $SCRIPT_PATH
 ```
 Em seguida, é necessário ajustar alguns campos no script.
 
-- `INTERFACE` : Colocar o nome da interface que será manipulada. Exemplo: ens192
-- `IP1` : Endereço IP atual, com Máscara. Exemplo: 172.18.2.150/22 
-- `GATEWAY1` : Endereço IP do Gateway atual. Exemplo: 172.18.0.1
-- `IP2` : Endereço IP Novo, com Máscara. Exemplo: 10.50.106.10
-- `GATEWAY2` : Enderço IP do Gateway Novo. Exemplo: 10.50.106.1
+- `INTERFACE` : Colocar o nome da interface que será manipulada. Exemplo: `ens192`
+- `IP1` : Endereço IP atual, com Máscara. Exemplo: `172.18.2.150/22` 
+- `GATEWAY1` : Endereço IP do Gateway atual. Exemplo: `172.18.0.1`
+- `IP2` : Endereço IP Novo, com Máscara. Exemplo: `10.50.106.10/24`
+- `GATEWAY2` : Enderço IP do Gateway Novo. Exemplo: `10.50.106.1`
 
 Nenhum outro ponto é necessário ajustar no script.
 
