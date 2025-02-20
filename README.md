@@ -14,6 +14,7 @@ Pendetente de testes:
 ## Usabilidade
 Deve-se baixar o script no servidor, ajustar os IPs (ORIGEM/DESTINO) conforme o planejamento da migração.
 
+### Ativando RC.LOCAL
 Ativar o `rc.local`, tanto para família `redhat`quanto para família `debian`.
 
 ```bash
@@ -64,6 +65,31 @@ else
     echo "exit 0" >> /etc/rc.local
 fi
 ```
+### Ativando 'SET IP'
+
+
+
+```bash
+mkdir -p /usr/local/scripts
+
+SCRIPT_PATH="/usr/local/scripts/set-ip.sh"
+
+if [ ! -f "$SCRIPT_PATH" ]; then
+    if command -v wget &>/dev/null; then
+        wget -O $SCRIPT_PATH https://raw.githubusercontent.com/hospitalsaocamilo/hsc-linux-set-ip/refs/heads/main/file/set-ip.sh
+    elif command -v curl &>/dev/null; then
+        curl -o $SCRIPT_PATH https://raw.githubusercontent.com/hospitalsaocamilo/hsc-linux-set-ip/refs/heads/main/file/set-ip.sh
+    else
+        echo "Erro: wget ou curl não encontrado. Instale um dos dois."
+        exit 1
+    fi
+fi
+
+chmod 750 $SCRIPT_PATH
+```
+
+
+
 
 > **:warning: ATENÇÃO :warning:**  
 Se o script de troca de IPs não for ajustado, ao ser executado, ele finalizará com falha e não afetará o sistema... 
