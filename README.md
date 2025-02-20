@@ -34,11 +34,11 @@ fi
 ```bash
 if [ ! -f /etc/systemd/system/rc-local.service ]; then
     if command -v wget &>/dev/null; then
-        wget -O /etc/systemd/system/rc-local.service https://raw.githubusercontent.com/hospitalsaocamilo/hsc-linux-set-ip/refs/heads/main/file/rc-local.service
+        wget -q -O /etc/systemd/system/rc-local.service https://raw.githubusercontent.com/hospitalsaocamilo/hsc-linux-set-ip/refs/heads/main/file/rc-local.service
         systemctl daemon-reload
         systemctl enable rc-local
     elif command -v curl &>/dev/null; then
-        curl -o /etc/systemd/system/rc-local.service https://raw.githubusercontent.com/hospitalsaocamilo/hsc-linux-set-ip/refs/heads/main/file/rc-local.service
+        curl -s -o /etc/systemd/system/rc-local.service https://raw.githubusercontent.com/hospitalsaocamilo/hsc-linux-set-ip/refs/heads/main/file/rc-local.service
         systemctl daemon-reload
         systemctl enable rc-local        
     else
@@ -76,9 +76,9 @@ SCRIPT_PATH="/usr/local/scripts/set-ip.sh"
 
 if [ ! -f "$SCRIPT_PATH" ]; then
     if command -v wget &>/dev/null; then
-        wget -O $SCRIPT_PATH https://raw.githubusercontent.com/hospitalsaocamilo/hsc-linux-set-ip/refs/heads/main/file/set-ip.sh
+        wget -q -O $SCRIPT_PATH https://raw.githubusercontent.com/hospitalsaocamilo/hsc-linux-set-ip/refs/heads/main/file/set-ip.sh
     elif command -v curl &>/dev/null; then
-        curl -o $SCRIPT_PATH https://raw.githubusercontent.com/hospitalsaocamilo/hsc-linux-set-ip/refs/heads/main/file/set-ip.sh
+        curl -s -o $SCRIPT_PATH https://raw.githubusercontent.com/hospitalsaocamilo/hsc-linux-set-ip/refs/heads/main/file/set-ip.sh
     else
         echo "Erro: wget ou curl não encontrado. Instale um dos dois."
         exit 1
