@@ -14,19 +14,16 @@ Pendetente de testes:
 ## Usabilidade
 Deve-se baixar o script no servidor, ajustar os IPs (ORIGEM/DESTINO) conforme o planejamento da migração.
 
-Ativar o `rc.local` e o próprio script como executável. 
+Ativar o `rc.local`. 
 
 ```bash
-export CAMINHO_SCRIPT=[ informar caminho script ]
-
-chmod +x $CAMINHO_SCRIPT
 chmod +x /etc/rc.local
 ```
 
 Incluir o script no `rc.local`.
 
 ```bash
-export CAMINHO_SCRIPT=[ informar caminho script ]
+export CAMINHO_SCRIPT='/usr/local/scripts/set-ip.sh'
 
 if [ "$(grep -c set-ip.sh /etc/rc.local)" -eq "0" ] ; then
  echo "Adicionando $CAMINHO_SCRIPT em /etc/rc.local"
@@ -41,5 +38,7 @@ O script possuim valores de exemplo preechidos e finalizará com falha caso algu
 Este repositório é público para facilitar o Download do script, não há nenhuma informação sensível aqui.
 
 ```bash
-wget https://raw.githubusercontent.com/hospitalsaocamilo/hsc-linux-set-ip/refs/heads/main/file/set-ip.sh
+mkdir -p /usr/local/scripts
+wget -O /usr/local/scripts/set-ip.sh https://raw.githubusercontent.com/hospitalsaocamilo/hsc-linux-set-ip/refs/heads/main/file/set-ip.sh
+chmod +x /usr/local/scripts/set-ip.sh
 ```
