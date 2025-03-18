@@ -98,6 +98,27 @@ Em seguida, é necessário ajustar alguns campos no script.
 Nenhum outro ponto é necessário ajustar no script.
 
 > **:warning: ATENÇÃO :warning:**  
-Se o script de troca de IPs não for ajustado, ao ser executado, ele finalizará com falha e não afetará o sistema... 
+Se o script de troca de IPs não for ajustado, ao ser executado, ele finalizará com falha e não afetará o sistema...
 
+Abaixo estão os comandos que auxiliarão na coleta dos dados atuais do servidor... 
 
+```bash
+# Coleta primeira interface de rede
+INTERFACE=$(ip a | grep "inet " | grep -v lo$ | head -n 1 | awk '{ print $NF }')
+sed -i s/^INTERFACE=.*/INTERFACE=\"$INTERFACE\"/g /usr/local/scripts/set-ip.sh
+
+# Coleta IP da primeira interface de rede
+IP1=$(ip a | grep "inet " | grep -v lo$ | head -n 1 | awk '{ print $2 }')
+sed -i -e "s|^IP1=.*|IP1=\"$IP1\"|g" /usr/local/scripts/set-ip.sh
+
+GATEWAY1=$(ip r | grep ^default | awk '{ print $3}')
+sed -i s/GATEWAY1=.*/GATEWAY1=$GATEWAY1/g /usr/local/scripts/set-ip.sh
+
+# Dados alterados
+egrep '^INTERFACE|^IP1|^GATEWAY1' /usr/local/scripts/set-ip.sh
+
+# Configurações atuais
+ip addr show $INTERFACE
+ip r | grep ^default
+```
+Estando tudo OK, basta pegar os dados da rede de destino.
