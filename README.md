@@ -9,7 +9,7 @@ Testado em servidores:
 - família Redhat (7/8/9)
 
 Pendetente de testes:
-- familia Debian (ubuntu 18.04/20.04/22.04)
+- familia Debian (ubuntu 18.04/20.04/22.04), que usam `netplan`
 
 ## Usabilidade
 Deve-se baixar o script no servidor, ajustar os IPs (ORIGEM/DESTINO) conforme o planejamento da migração.
