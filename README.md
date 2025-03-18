@@ -120,5 +120,6 @@ egrep '^INTERFACE|^IP1|^GATEWAY1' /usr/local/scripts/set-ip.sh
 # Configurações atuais
 ip addr show $INTERFACE
 ip r | grep ^default
+
 ```
 Estando tudo OK, basta pegar os dados da rede de destino.
